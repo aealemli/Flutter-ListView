@@ -1,0 +1,82 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Ana Sayfa'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Sayfa 1'),
+            subtitle: Text('Sayfa 1 açıklaması'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Page1(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Sayfa 2'),
+            subtitle: Text('Sayfa 2 açıklaması'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Page2(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sayfa 1'),
+      ),
+      body: Center(
+        child: Text('Sayfa 1 içeriği'),
+      ),
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sayfa 2'),
+      ),
+      body: Center(
+        child: Text('Sayfa 2 içeriği'),
+      ),
+    );
+  }
+}
